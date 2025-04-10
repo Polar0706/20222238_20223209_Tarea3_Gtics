@@ -32,7 +32,7 @@ public class Employee {
     private Date hireDate;
 
     @Column(name="job_id", nullable = false, length = 10)
-    private String jobId;   
+    private String jobId;
 
     @Column(name="salary", nullable = false)
     private double salary;
