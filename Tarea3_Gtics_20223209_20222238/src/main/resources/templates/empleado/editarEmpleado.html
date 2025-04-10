@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar Empleado</title>
+</head>
+<body>
+<div th:replace="fragmento/menu :: menu"></div>
+<h1>Editar Empleado</h1>
+
+<form th:action="@{/employees/update}" method="post" th:object="${employee}">
+    <input type="hidden" th:field="*{id}" />
+
+    <label>Nombre:</label>
+    <input type="text" th:field="*{nombre}" required /><br/>
+
+    <label>Apellido:</label>
+    <input type="text" th:field="*{apellido}" required /><br/>
+
+    <label>Puesto:</label>
+    <input type="text" th:field="*{puesto}" required /><br/>
+
+    <label>Departamento:</label>
+    <input type="text" th:field="*{departamento}" required /><br/>
+
+    <label>Ciudad:</label>
+    <input type="text" th:field="*{ciudad}" required /><br/>
+
+    <button type="submit">Actualizar</button>
+    <a th:href="@{/employees}">Cancelar</a>
+</form>
+</body>
+</html>
